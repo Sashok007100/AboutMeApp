@@ -1,3 +1,10 @@
+//
+//  LoginController.swift
+//  AboutMeApp
+//
+//  Created by Alexandr Artemov (Mac Mini) on 02.06.2025.
+//
+
 import UIKit
 
 final class LoginViewController: UIViewController {
@@ -30,9 +37,9 @@ final class LoginViewController: UIViewController {
               passwordTextField.text == password else {
             showAlert(
                 withTitle: "Invalid login or password",
-                andMessage: "Please, enter correct login and password",
-                shouldClearField: true
-            )
+                andMessage: "Please, enter correct login and password") {
+                    self.passwordTextField.text = ""
+                }
             return false
         }
         return true
@@ -42,16 +49,14 @@ final class LoginViewController: UIViewController {
     @IBAction func forgotUsernameButtonTapped() {
         showAlert(
             withTitle: "Oops!",
-            andMessage: "Your name is \(user) 😵‍💫",
-            shouldClearField: false
+            andMessage: "Your name is \(user) 😵‍💫"
         )
     }
     
     @IBAction func forgotPasswordButtonTapped() {
         showAlert(
             withTitle: "Oops!",
-            andMessage: "Your password is \(password) 🫣",
-            shouldClearField: false
+            andMessage: "Your password is \(password) 🫣"
         )
     }
     
@@ -65,7 +70,7 @@ final class LoginViewController: UIViewController {
     private func showAlert(
         withTitle title: String,
         andMessage message: String,
-        shouldClearField: Bool
+        completion: (() -> Void)? = nil
     ) {
         let alert = UIAlertController(
             title: title,
@@ -73,9 +78,7 @@ final class LoginViewController: UIViewController {
             preferredStyle: .alert
         )
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            if shouldClearField {
-                self.passwordTextField.text = ""
-            }
+            completion?()
         }
         alert.addAction(okAction)
         

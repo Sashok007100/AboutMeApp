@@ -1,3 +1,10 @@
+//
+//  WelcomeController.swift
+//  AboutMeApp
+//
+//  Created by Alexandr Artemov (Mac Mini) on 03.06.2025.
+//
+
 import UIKit
 
 final class WelcomeViewController: UIViewController {
