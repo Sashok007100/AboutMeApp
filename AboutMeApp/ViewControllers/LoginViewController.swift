@@ -7,10 +7,16 @@ final class LoginViewController: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     
     // MARK: - Private Properties
-    private let user = "Aleksandr"
-    private let password = "1"
+    private let mockData = User.getMockResponse()
     
     // MARK: - Overrides
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        usernameTextField.text = mockData.username
+        passwordTextField.text = mockData.password
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let welcomeVC = segue.destination as? WelcomeViewController
         
@@ -26,8 +32,8 @@ final class LoginViewController: UIViewController {
         withIdentifier identifier: String,
         sender: Any?
     ) -> Bool {
-        guard usernameTextField.text == user,
-              passwordTextField.text == password else {
+        guard usernameTextField.text == mockData.username,
+              passwordTextField.text == mockData.password else {
             showAlert(
                 withTitle: "Invalid login or password",
                 andMessage: "Please, enter correct login and password",
@@ -42,7 +48,7 @@ final class LoginViewController: UIViewController {
     @IBAction func forgotUsernameButtonTapped() {
         showAlert(
             withTitle: "Oops!",
-            andMessage: "Your name is \(user) 😵‍💫",
+            andMessage: "Your name is \(mockData.username) 😵‍💫",
             shouldClearField: false
         )
     }
@@ -50,7 +56,7 @@ final class LoginViewController: UIViewController {
     @IBAction func forgotPasswordButtonTapped() {
         showAlert(
             withTitle: "Oops!",
-            andMessage: "Your password is \(password) 🫣",
+            andMessage: "Your password is \(mockData.password) 🫣",
             shouldClearField: false
         )
     }
