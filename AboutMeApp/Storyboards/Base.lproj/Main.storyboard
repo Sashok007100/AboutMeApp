@@ -143,6 +143,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="lbR-L7-pIh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DXC-bD-gL1">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -198,7 +199,7 @@
                             <constraint firstItem="kAb-oz-Phm" firstAttribute="trailing" secondItem="5iI-3b-HNw" secondAttribute="trailing" constant="16" id="xgb-g1-EuY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Александр Артемов" id="jgt-KQ-Fs2">
+                    <navigationItem key="navigationItem" title="Имя Фамилия" id="jgt-KQ-Fs2">
                         <barButtonItem key="rightBarButtonItem" title="Bio" id="Vhg-ap-u0N">
                             <connections>
                                 <segue destination="nPx-mM-Acc" kind="show" id="rBK-O0-biq"/>
