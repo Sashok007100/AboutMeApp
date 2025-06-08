@@ -1,3 +1,10 @@
+//
+//  LoginController.swift
+//  AboutMeApp
+//
+//  Created by Alexandr Artemov (Mac Mini) on 02.06.2025.
+//
+
 import UIKit
 
 final class LoginViewController: UIViewController {
@@ -18,9 +25,17 @@ final class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let welcomeVC = segue.destination as? WelcomeViewController
+        let tabBarVC = segue.destination as? UITabBarController
         
-        welcomeVC?.displayedUsername = usernameTextField.text
+        tabBarVC?.viewControllers?.forEach { viewController in
+            if let welcomeVC = viewController as? WelcomeViewController{
+                welcomeVC.mockData = mockData
+            } else if let navigationVC = viewController as? UINavigationController {
+                guard let profileVC = navigationVC.topViewController as? ProfileViewController else { return }
+                
+                profileVC.mockData = mockData.person
+            }
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
