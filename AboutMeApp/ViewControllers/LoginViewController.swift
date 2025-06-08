@@ -16,7 +16,7 @@ final class LoginViewController: UIViewController {
     // MARK: - Private Properties
     private let mockData = User.getMockResponse()
     
-    // MARK: - Overrides
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,6 +24,7 @@ final class LoginViewController: UIViewController {
         passwordTextField.text = mockData.password
     }
     
+    // MARK: - Overrides
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let tabBarVC = segue.destination as? UITabBarController
         
