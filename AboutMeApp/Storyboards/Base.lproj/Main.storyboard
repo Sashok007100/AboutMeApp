@@ -88,7 +88,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4qW-e5-mEB">
-                                <rect key="frame" x="16" y="180" width="288" height="100.5"/>
+                                <rect key="frame" x="16" y="180" width="288" height="141"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, Name!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xLZ-nK-yC9">
                                         <rect key="frame" x="39" y="0.0" width="210.5" height="32.5"/>
@@ -96,8 +96,14 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My name is firstName secondName." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="UAh-mQ-PZP">
+                                        <rect key="frame" x="0.0" y="40.5" width="288" height="32.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👋" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6d-8E-8q1">
-                                        <rect key="frame" x="117" y="40.5" width="54" height="60"/>
+                                        <rect key="frame" x="117" y="81" width="54" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -130,6 +136,7 @@
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="ert-VS-02b"/>
                     <connections>
                         <outlet property="greetingUserLabel" destination="xLZ-nK-yC9" id="kOe-gs-eUJ"/>
+                        <outlet property="nameLabel" destination="UAh-mQ-PZP" id="23u-uK-dgq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HIf-Xl-VqF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -208,6 +215,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Имя Фамилия" id="jgt-KQ-Fs2">
                         <barButtonItem key="rightBarButtonItem" title="Bio" id="Vhg-ap-u0N">
+                            <color key="tintColor" systemColor="labelColor"/>
                             <connections>
                                 <segue destination="nPx-mM-Acc" kind="show" id="rBK-O0-biq"/>
                             </connections>
@@ -227,14 +235,20 @@
         <!--Biography View Controller-->
         <scene sceneID="W67-RB-oYJ">
             <objects>
-                <viewController id="nPx-mM-Acc" userLabel="Biography View Controller" sceneMemberID="viewController">
+                <viewController id="nPx-mM-Acc" userLabel="Biography View Controller" customClass="BiographyViewController" customModule="AboutMeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M7r-2b-JMv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogN-Dr-hWT">
-                                <rect key="frame" x="16" y="111" width="288" height="388"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogN-Dr-hWT">
+                                <rect key="frame" x="16" y="116" width="288" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя Фамилия Bio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRm-6P-5o6">
+                                <rect key="frame" x="16" y="64" width="288" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -242,13 +256,19 @@
                         <viewLayoutGuide key="safeArea" id="N8I-LD-J5C"/>
                         <color key="backgroundColor" systemColor="systemMintColor"/>
                         <constraints>
-                            <constraint firstItem="ogN-Dr-hWT" firstAttribute="leading" secondItem="N8I-LD-J5C" secondAttribute="leading" constant="16" id="0p8-Tg-ta8"/>
-                            <constraint firstItem="ogN-Dr-hWT" firstAttribute="top" secondItem="N8I-LD-J5C" secondAttribute="top" constant="20" id="EBe-EB-StI"/>
-                            <constraint firstItem="N8I-LD-J5C" firstAttribute="bottom" secondItem="ogN-Dr-hWT" secondAttribute="bottom" constant="20" id="Nrm-4L-kol"/>
-                            <constraint firstItem="N8I-LD-J5C" firstAttribute="trailing" secondItem="ogN-Dr-hWT" secondAttribute="trailing" constant="16" id="hAF-34-63c"/>
+                            <constraint firstItem="cRm-6P-5o6" firstAttribute="top" secondItem="N8I-LD-J5C" secondAttribute="top" constant="20" id="IGk-Ge-Zxt"/>
+                            <constraint firstItem="ogN-Dr-hWT" firstAttribute="top" secondItem="cRm-6P-5o6" secondAttribute="bottom" constant="16" id="PEz-2u-0T1"/>
+                            <constraint firstItem="N8I-LD-J5C" firstAttribute="trailing" secondItem="cRm-6P-5o6" secondAttribute="trailing" constant="16" id="QnE-RU-CPR"/>
+                            <constraint firstItem="N8I-LD-J5C" firstAttribute="trailing" secondItem="ogN-Dr-hWT" secondAttribute="trailing" constant="16" id="TTh-FC-1cV"/>
+                            <constraint firstItem="ogN-Dr-hWT" firstAttribute="leading" secondItem="N8I-LD-J5C" secondAttribute="leading" constant="16" id="Y1Q-vV-vD8"/>
+                            <constraint firstItem="cRm-6P-5o6" firstAttribute="leading" secondItem="N8I-LD-J5C" secondAttribute="leading" constant="16" id="phF-eA-rUW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Edc-QZ-hyZ"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="Edc-QZ-hyZ"/>
+                    <connections>
+                        <outlet property="bioLabel" destination="ogN-Dr-hWT" id="pBL-CG-Jm5"/>
+                        <outlet property="bioTitleLabel" destination="cRm-6P-5o6" id="9Br-5y-qNg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ND-d4-PvJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -280,6 +300,9 @@
     <resources>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
