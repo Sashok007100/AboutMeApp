@@ -1,13 +1,28 @@
+//
+//  WelcomeController.swift
+//  AboutMeApp
+//
+//  Created by Alexandr Artemov (Mac Mini) on 03.06.2025.
+//Add commentMore actions
+
 import UIKit
 
 final class WelcomeViewController: UIViewController {
 
     @IBOutlet var greetingUserLabel: UILabel!
+    @IBOutlet var nameLabel: UILabel!
     
-    var displayedUsername: String!
+    var mockData: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.setupGradient()
+        
+        greetingUserLabel.text = "Welcome, \(mockData.username)!"
+        nameLabel.text = "My name is \(mockData.person.firstName) \(mockData.person.secondName)."
+    }
+}
 
         setupGradient()
         
