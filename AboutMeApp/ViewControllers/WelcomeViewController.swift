@@ -24,21 +24,18 @@ final class WelcomeViewController: UIViewController {
     }
 }
 
-        setupGradient()
-        
-        greetingUserLabel.text = "Welcome, \(displayedUsername ?? "Username")!"
-    }
-    
-    private func setupGradient() {
+extension UIView {
+    func setupGradient() {
         let gradient = CAGradientLayer()
-            gradient.frame = view.bounds
+            gradient.frame = bounds
             gradient.colors = [
-                UIColor.systemBlue.cgColor,
-                UIColor.systemRed.cgColor
+                UIColor.systemIndigo.cgColor,
+                UIColor.systemRed.cgColor,
+                UIColor.systemBlue.cgColor
             ]
             gradient.startPoint = CGPoint(x: 0, y: 0)
-            gradient.endPoint   = CGPoint(x: 0, y: 1)
+            gradient.endPoint   = CGPoint(x: 1, y: 1)
 
-            view.layer.insertSublayer(gradient, at: 0)
+            layer.insertSublayer(gradient, at: 0)
     }
 }
