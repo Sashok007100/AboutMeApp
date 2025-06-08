@@ -159,44 +159,51 @@
         <!--Profile View Controller-->
         <scene sceneID="feC-SC-auG">
             <objects>
-                <viewController id="R7D-wQ-aQm" userLabel="Profile View Controller" sceneMemberID="viewController">
+                <viewController id="R7D-wQ-aQm" userLabel="Profile View Controller" customClass="ProfileViewController" customModule="AboutMeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Azn-lk-FUh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="5iI-3b-HNw">
-                                <rect key="frame" x="16" y="111" width="288" height="241.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="t5u-HS-j38">
+                                <rect key="frame" x="16" y="227" width="288" height="100"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hek-1J-xIQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="127.5"/>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQq-H4-l7I">
-                                        <rect key="frame" x="0.0" y="141.5" width="288" height="24"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Фамилия:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIH-f5-V5Q">
-                                        <rect key="frame" x="0.0" y="179.5" width="288" height="24"/>
+                                        <rect key="frame" x="0.0" y="38" width="288" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Город:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XcC-HS-OyL">
-                                        <rect key="frame" x="0.0" y="217.5" width="288" height="24"/>
+                                        <rect key="frame" x="0.0" y="76" width="288" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hek-1J-xIQ">
+                                <rect key="frame" x="110" y="111" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Hek-1J-xIQ" secondAttribute="height" multiplier="1:1" id="50k-Cu-zRb"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kAb-oz-Phm"/>
                         <color key="backgroundColor" systemColor="systemMintColor"/>
                         <constraints>
-                            <constraint firstItem="5iI-3b-HNw" firstAttribute="top" secondItem="kAb-oz-Phm" secondAttribute="top" constant="20" id="tXb-qU-DMH"/>
-                            <constraint firstItem="5iI-3b-HNw" firstAttribute="leading" secondItem="kAb-oz-Phm" secondAttribute="leading" constant="16" id="wni-6h-Obt"/>
-                            <constraint firstItem="kAb-oz-Phm" firstAttribute="trailing" secondItem="5iI-3b-HNw" secondAttribute="trailing" constant="16" id="xgb-g1-EuY"/>
+                            <constraint firstItem="t5u-HS-j38" firstAttribute="top" secondItem="Hek-1J-xIQ" secondAttribute="bottom" constant="16" id="3TV-Qx-pgB"/>
+                            <constraint firstItem="kAb-oz-Phm" firstAttribute="trailing" secondItem="t5u-HS-j38" secondAttribute="trailing" constant="16" id="6h4-OQ-71f"/>
+                            <constraint firstItem="t5u-HS-j38" firstAttribute="leading" secondItem="kAb-oz-Phm" secondAttribute="leading" constant="16" id="8G4-fk-EkQ"/>
+                            <constraint firstItem="Hek-1J-xIQ" firstAttribute="centerX" secondItem="Azn-lk-FUh" secondAttribute="centerX" id="DTm-z4-Kh9"/>
+                            <constraint firstItem="kAb-oz-Phm" firstAttribute="trailing" secondItem="Hek-1J-xIQ" secondAttribute="trailing" constant="110" id="ILq-eJ-sBi"/>
+                            <constraint firstItem="Hek-1J-xIQ" firstAttribute="leading" secondItem="kAb-oz-Phm" secondAttribute="leading" constant="110" id="YsS-2a-CV9"/>
+                            <constraint firstItem="Hek-1J-xIQ" firstAttribute="top" secondItem="kAb-oz-Phm" secondAttribute="top" constant="20" id="zAR-ij-b7K"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Имя Фамилия" id="jgt-KQ-Fs2">
@@ -206,6 +213,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="avatarImageView" destination="Hek-1J-xIQ" id="YTF-Ke-EzE"/>
+                        <outlet property="cityLabel" destination="XcC-HS-OyL" id="QnF-Zq-CDr"/>
+                        <outlet property="firstNameLabel" destination="EQq-H4-l7I" id="bIs-E7-67Q"/>
+                        <outlet property="secondNameLabel" destination="KIH-f5-V5Q" id="lLJ-La-vkF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xhU-sK-Rhb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
