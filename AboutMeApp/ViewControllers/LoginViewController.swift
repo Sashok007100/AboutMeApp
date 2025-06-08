@@ -14,14 +14,29 @@ final class LoginViewController: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     
     // MARK: - Private Properties
-    private let user = "Aleksandr"
-    private let password = "1"
+    private let mockData = User.getMockResponse()
+    
+    // MARK: - Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        usernameTextField.text = mockData.username
+        passwordTextField.text = mockData.password
+    }
     
     // MARK: - Overrides
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let welcomeVC = segue.destination as? WelcomeViewController
+        let tabBarVC = segue.destination as? UITabBarController
         
-        welcomeVC?.displayedUsername = usernameTextField.text
+        tabBarVC?.viewControllers?.forEach { viewController in
+            if let welcomeVC = viewController as? WelcomeViewController{
+                welcomeVC.mockData = mockData
+            } else if let navigationVC = viewController as? UINavigationController {
+                guard let profileVC = navigationVC.topViewController as? ProfileViewController else { return }
+                
+                profileVC.mockData = mockData.person
+            }
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -33,8 +48,8 @@ final class LoginViewController: UIViewController {
         withIdentifier identifier: String,
         sender: Any?
     ) -> Bool {
-        guard usernameTextField.text == user,
-              passwordTextField.text == password else {
+        guard usernameTextField.text == mockData.username,
+              passwordTextField.text == mockData.password else {
             showAlert(
                 withTitle: "Invalid login or password",
                 andMessage: "Please, enter correct login and password") {
@@ -49,14 +64,14 @@ final class LoginViewController: UIViewController {
     @IBAction func forgotUsernameButtonTapped() {
         showAlert(
             withTitle: "Oops!",
-            andMessage: "Your name is \(user) 😵‍💫"
+            andMessage: "Your name is \(mockData.username) 😵‍💫"
         )
     }
     
     @IBAction func forgotPasswordButtonTapped() {
         showAlert(
             withTitle: "Oops!",
-            andMessage: "Your password is \(password) 🫣"
+            andMessage: "Your password is \(mockData.password) 🫣"
         )
     }
     
