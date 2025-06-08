@@ -1,13 +1,9 @@
-<<<<<<< HEAD:AboutMeApp/WelcomeViewController.swift
-=======
 //
 //  WelcomeController.swift
 //  AboutMeApp
 //
 //  Created by Alexandr Artemov (Mac Mini) on 03.06.2025.
-//Add commentMore actions
 
->>>>>>> main:AboutMeApp/ViewControllers/WelcomeViewController.swift
 import UIKit
 
 final class WelcomeViewController: UIViewController {
